@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #2d2133;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px; /* Largura máxima para a box */
+    padding: 20px;
+    background-color: #6baa9a;
+    border: 2px solid #6baa9a; /* Borda para dar destaque à box */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para efeito de profundidade */
+    border-radius: 10px; /* Bordas arredondadas */
+}
