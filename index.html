@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Game</title>
+        
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1>LVL Calculator</h1>
+
+        <br><br>
+        <b>Status</b>
+        <br>
+        <label for="atk">ATK:</label>
+        <input type="number" id="atk" min="1" max="9" value="1" oninput="this.value = Math.min(Math.max(this.value, this.min), this.max)">
+        
+        <label for="hp">HP:</label>
+        <input type="number" id="hp" min="1" max="9" value="1" oninput="this.value = Math.min(Math.max(this.value, this.min), this.max)">
+
+        <br><br>
+        <b>Habilidades</b>
+        <br>
+        <label for="ab_1">Habilidade 1:</label>
+        <input list="abilities" id="ab_1" name="Ability 1">
+        <label for="ab_1_N">N:</label>
+        <input type="number" id="ab_1_N" min="-9" max="9" value="0" oninput="this.value = Math.min(Math.max(this.value, this.min), this.max)">
+
+        <br>
+        <label for="ab_2">Habilidade 2:</label>
+        <input list="abilities" id="ab_2" name="Ability 2">
+        <label for="ab_2_N">N:</label>
+        <input type="number" id="ab_2_N" min="-9" max="9" value="0" oninput="this.value = Math.min(Math.max(this.value, this.min), this.max)">
+
+        <br>
+        <label for="ab_3">Habilidade 3:</label>
+        <input list="abilities" id="ab_3" name="Ability 3">
+        <label for="ab_3_N">N:</label>
+        <input type="number" id="ab_3_N" min="-9" max="9" value="0" oninput="this.value = Math.min(Math.max(this.value, this.min), this.max)">
+        
+        <br><a href="https://docs.google.com/document/d/1aA2iZs6bwOxCCocprUYvtek4fczdsRbwuID4a4KGh_4/edit?usp=sharing" target="_blank">Arquivo das Habilidades</a>
+        
+        <br><br>
+        <b>Extras</b>
+        <br>
+        <label for="exp_modfy">XP extra:</label>
+        <input type="number" id="exp_modfy" min="-9" max="9" value="0" oninput="this.value = Math.min(Math.max(this.value, this.min), this.max)">
+        
+        <br>
+        <button onclick="exp_calculator()">Gerar</button>
+
+        <br><br><br>
+        <b>
+        <label id="lvl">...</label>
+        <br>
+        <label id="exp"></label>
+        </b>
+
+        <datalist id="abilities">
+            <option value="Empurrão" data-exp="1">XP: 1</option>
+            <option value="Puxão" data-exp="2">XP: 2</option>
+            <option value="Pesado" data-exp="1">XP: 1</option>
+            <option value="Volta" data-exp="1">XP: 1</option>
+            <option value="Espinho" data-exp="2">XP: 2 + N</option>
+            <option value="Caça" data-exp="3">XP: 3</option>
+            <option value="Combo" data-exp="2">XP: 2</option>
+            <option value="Ajudante" data-exp="2">XP: 2</option>
+            <option value="Armadura" data-exp="1">XP: 1 + N</option>
+            <option value="Escudo" data-exp="0">XP: 0 + N</option>
+            <option value="Perfuração" data-exp="1">XP: 1</option>
+            <option value="Invasor" data-exp="2">XP: 2</option>
+            <option value="Predador" data-exp="3">XP: 3</option>
+            <option value="Comida" data-exp="2">XP: 2</option>
+            <option value="Equilíbrio" data-exp="4">XP: 4</option>
+            <option value="Copião" data-exp="1">XP: 1</option>
+            <option value="Cura" data-exp="2">XP: 2</option>
+            <option value="Vampirismo" data-exp="2">XP: 2</option>
+            <option value="Regeneração" data-exp="1">XP: 1</option>
+            <option value="Explosivo" data-exp="1">XP: 1 + N</option>
+            <option value="Ressurgir" data-exp="2">XP: 3 + N</option>
+            <option value="Fogo" data-exp="2">XP: 2 + N</option>
+            <option value="Pavor" data-exp="2">XP: 2</option>
+            <option value="Orgulhoso" data-exp="1">XP: 1</option>
+            <option value="Persistente" data-exp="1">XP: 1</option>
+            <option value="Ecstasy" data-exp="3">XP: 3</option>
+            <option value="Furioso" data-exp="2">XP: 2</option>
+            <option value="Rápido" data-exp="2">XP: 2</option>
+            <option value="Distância" data-exp="0">XP: 0 + N</option>
+            <option value="Voador" data-exp="0">XP: 0 + N</option>
+            <option value="Garras" data-exp="1">XP: 1</option>
+            <option value="Certeiro" data-exp="2">XP: 2</option>
+            <option value="Veneno" data-exp="1">XP: 1</option>
+            <option value="Exclusivo" data-exp="1">XP: 1</option>
+            <option value="Veterano" data-exp="2">XP: 2 + N</option>
+            <option value="Alvo" data-exp="1">XP: 1</option>
+
+            <option value="Dor" data-exp="-1">XP: -1</option>
+            <option value="Paralisia" data-exp="-2">XP: -2</option>
+            <option value="Confusão" data-exp="-1">XP: -1</option>
+            <option value="Envenenado" data-exp="0">XP: 0 - N</option>
+            <option value="Vulnerável" data-exp="-1">XP: -1</option>
+            <option value="Lealdade" data-exp="-2">XP: -2</option>
+            <option value="Lento" data-exp="-1">XP: -1</option>
+            <option value="Leve" data-exp="-1">XP: -1</option>
+            <option value="Medroso" data-exp="-1">XP: -1</option>
+            <option value="Frágil" data-exp="-2">XP: -2</option>
+        </datalist>
+    </body>
+
+    <script>
+        function exp_calculator() {
+        // Coleta dados //
+        // Status
+        var atk = parseFloat(document.getElementById('atk').value);
+        var hp = parseFloat(document.getElementById('hp').value);
+        // Valor das Habilidades
+        var ab1_N = parseFloat(document.getElementById('ab_1_N').value);
+        var ab2_N = parseFloat(document.getElementById('ab_2_N').value);
+        var ab3_N = parseFloat(document.getElementById('ab_3_N').value);
+        
+        var _ab1 = document.getElementById('ab_1').value;
+        var _ab2 = document.getElementById('ab_2').value;
+        var _ab3 = document.getElementById('ab_3').value;
+        
+        var all_ab = document.querySelectorAll('#abilities option');
+        var ab1, ab2, ab3;
+        let found;
+        
+        // Ab 1
+        found = false;
+        for (var i of all_ab) {
+            if (i.value === _ab1) {
+                ab1 = parseFloat(i.getAttribute('data-exp')); 
+                found = true;
+                break;
+            }
+        }
+        if (!found) { ab1 = 0}
+
+        // Ab 2
+        found = false;
+        for (var i of all_ab) {
+            if (i.value === _ab2) {
+                ab2 = parseFloat(i.getAttribute('data-exp')); 
+                found = true;
+                break;
+            }
+        }
+        if (!found) { ab2 = 0}
+
+        // Ab 3
+        found = false;
+        for (var i of all_ab) {
+            if (i.value === _ab3) {
+                ab3 = parseFloat(i.getAttribute('data-exp')); 
+                found = true;
+                break;
+            }
+        }
+        if (!found) { ab3 = 0}
+
+        // Modificador
+        var modfy = parseFloat(document.getElementById('exp_modfy').value);
+
+        // Calculo
+        var stats = (atk + hp)/2;
+        var abilities = (ab1 + ab2 + ab3) + (ab1_N + ab2_N + ab3_N);
+
+        var total_exp = (stats + abilities + modfy);
+        var result = Math.round(total_exp/2)
+
+        document.getElementById('lvl').textContent = ("Level: " + result);
+        document.getElementById('exp').textContent = ("Exp: " + total_exp);
+        }   
+    </script>
+</html>
