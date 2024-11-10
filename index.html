@@ -10,102 +10,153 @@
     <body>
     <div class="container">
         <h1>LVL Calculator</h1>
-
-        <br><br>
-        <b>Status</b>
         <br>
-        <label for="atk">ATK:</label>
-        <input type="number" id="atk" min="1" max="9" value="1" oninput="this.value = Math.min(Math.max(this.value, this.min), this.max)">
-        
-        <label for="hp">HP:</label>
-        <input type="number" id="hp" min="1" max="9" value="1" oninput="this.value = Math.min(Math.max(this.value, this.min), this.max)">
-
-        <br><br>
-        <b>Habilidades</b>
+        <div class="note">
+            <span>If you don't understand what this is for, then it wasn't made for you.</span><br>
+        </div>
         <br>
-        <label for="ab_1">Habilidade 1:</label>
-        <input list="abilities" id="ab_1" name="Ability 1">
-        <label for="ab_1_N">N:</label>
-        <input type="number" id="ab_1_N" min="-9" max="9" value="0" oninput="this.value = Math.min(Math.max(this.value, this.min), this.max)">
 
-        <br>
-        <label for="ab_2">Habilidade 2:</label>
-        <input list="abilities" id="ab_2" name="Ability 2">
-        <label for="ab_2_N">N:</label>
-        <input type="number" id="ab_2_N" min="-9" max="9" value="0" oninput="this.value = Math.min(Math.max(this.value, this.min), this.max)">
+        <div class="other-container">
+            <b>Status</b>
+            <br>
+            <div class="note">
+                <span>Aqui é so <b>ATK</b> e <b>HP</b> mesmo :/</span><br>
+            </div>
+            <br>
+            <label for="atk">ATK:</label>
+            <input type="number" id="atk" value="1" class="number-input">
+            <br>
+            <label for="hp">HP:</label>
+            <input type="number" id="hp" value="1" class="number-input">
+        </div>
 
         <br>
-        <label for="ab_3">Habilidade 3:</label>
-        <input list="abilities" id="ab_3" name="Ability 3">
-        <label for="ab_3_N">N:</label>
-        <input type="number" id="ab_3_N" min="-9" max="9" value="0" oninput="this.value = Math.min(Math.max(this.value, this.min), this.max)">
+
+        <div class="other-container">
+            <b>Habilidades</b>
+            <br>
+            <div class="note">
+                <span>Se na Habilidade possuir um <b>N</b>, vc devera colocar o valor em <b>N</b>.</span><br>
+                <span>Se na Habilidade <b>NÃO</b> possuir um <b>N</b>, deixe <b>N</b> 0.</span><br><br>
+                <span>Preste atenção no sinal de <b>N</b>.</span><br>
+                    <span>Exemplo: XP: 1 - <b>N</b>... Então <b>N</b> devera ser negativo.</span><br>
+                    <span>Exemplo: XP: 1 + <b>N</b>... Então <b>N</b> devera ser positivo.</span><br>
+                <br><br>
+
+                <span>Se não possuir alguma Habilidade, deixe o campo vazio e o <b>N</b> dela 0.</span><br>
+            </div>
+            <br>
+            <label for="ab_1">Habilidade 1:</label>
+            <input list="abilities" id="ab_1" name="Ability 1" class="text-input">
+            <br>
+            <label for="ab_1_N">N:</label>
+            <input type="number" id="ab_1_N" value="0" class="number-input">
+
+            <br><br>
+            <label for="ab_2">Habilidade 2:</label>
+            <input list="abilities" id="ab_2" name="Ability 2" class="text-input">
+            <br>
+            <label for="ab_2_N">N:</label>
+            <input type="number" id="ab_2_N" value="0" class="number-input">
+
+            <br><br>
+            <label for="ab_3">Habilidade 3:</label>
+            <input list="abilities" id="ab_3" name="Ability 3" class="text-input">
+            <br>
+            <label for="ab_3_N">N:</label>
+            <input type="number" id="ab_3_N" value="0" class="number-input">
+            <br><a href="https://docs.google.com/document/d/1aA2iZs6bwOxCCocprUYvtek4fczdsRbwuID4a4KGh_4/edit?usp=sharing" target="_blank">Arquivo das Habilidades</a>
+        </div>
         
-        <br><a href="https://docs.google.com/document/d/1aA2iZs6bwOxCCocprUYvtek4fczdsRbwuID4a4KGh_4/edit?usp=sharing" target="_blank">Arquivo das Habilidades</a>
-        
-        <br><br>
-        <b>Extras</b>
         <br>
-        <label for="exp_modfy">XP extra:</label>
-        <input type="number" id="exp_modfy" min="-9" max="9" value="0" oninput="this.value = Math.min(Math.max(this.value, this.min), this.max)">
-        
+
+        <div class="other-container">
+            <b>Extras</b>
+            <br>
+            <div class="note">
+                <span> Adicionais que dependem de vc. </span><br>
+                <span> <b>NÃO</b> use se não souber. </span>
+            </div>
+            <br>
+            <label for="exp_modfy">XP extra: </label>
+            <br>
+            <input type="number" id="exp_modfy" min="-9" max="9" value="0" oninput="this.value = Math.min(Math.max(this.value, this.min), this.max)">
+            <span class="note"> Considera a Habilidade Especial da Criatura. </span>
+        </div>
+
+        <br>
+        <div class="note">
+            <span> OBS: </span><br>
+            <span> Garanta que Status não sejam menor que 1 ou maior que 9.</span><br>
+            <span> Garanta que N não sejam menor que -9 ou maior que 9.</span><br><br>
+            <span> Qualquer coisa perguntem pra mim.</span><br>
+        </div>
+
         <br>
         <button onclick="exp_calculator()">Gerar</button>
-
-        <br><br><br>
-        <b>
-        <label id="lvl">...</label>
         <br>
-        <label id="exp"></label>
-        </b>
+        <div class="note">
+            <span> Quando terminar clique aqui :P </span>
+        </div>
+
+        <br><br>
+        <div class="note">
+            <b>
+            <label id="lvl">...</label>
+            <br>
+            <label id="exp"></label>
+            </b>
+        </div>
 
         <datalist id="abilities">
-            <option value="Empurrão" data-exp="1">XP: 1</option>
-            <option value="Puxão" data-exp="2">XP: 2</option>
-            <option value="Pesado" data-exp="1">XP: 1</option>
-            <option value="Volta" data-exp="1">XP: 1</option>
-            <option value="Espinho" data-exp="2">XP: 2 + N</option>
-            <option value="Caça" data-exp="3">XP: 3</option>
-            <option value="Combo" data-exp="2">XP: 2</option>
-            <option value="Ajudante" data-exp="2">XP: 2</option>
-            <option value="Armadura" data-exp="1">XP: 1 + N</option>
-            <option value="Escudo" data-exp="0">XP: 0 + N</option>
-            <option value="Perfuração" data-exp="1">XP: 1</option>
-            <option value="Invasor" data-exp="2">XP: 2</option>
-            <option value="Predador" data-exp="3">XP: 3</option>
-            <option value="Comida" data-exp="2">XP: 2</option>
-            <option value="Equilíbrio" data-exp="4">XP: 4</option>
-            <option value="Copião" data-exp="1">XP: 1</option>
-            <option value="Cura" data-exp="2">XP: 2</option>
-            <option value="Vampirismo" data-exp="2">XP: 2</option>
-            <option value="Regeneração" data-exp="1">XP: 1</option>
-            <option value="Explosivo" data-exp="1">XP: 1 + N</option>
-            <option value="Ressurgir" data-exp="2">XP: 3 + N</option>
-            <option value="Fogo" data-exp="2">XP: 2 + N</option>
-            <option value="Pavor" data-exp="2">XP: 2</option>
-            <option value="Orgulhoso" data-exp="1">XP: 1</option>
-            <option value="Persistente" data-exp="1">XP: 1</option>
-            <option value="Ecstasy" data-exp="3">XP: 3</option>
-            <option value="Furioso" data-exp="2">XP: 2</option>
-            <option value="Rápido" data-exp="2">XP: 2</option>
-            <option value="Distância" data-exp="0">XP: 0 + N</option>
-            <option value="Voador" data-exp="0">XP: 0 + N</option>
-            <option value="Garras" data-exp="1">XP: 1</option>
-            <option value="Certeiro" data-exp="2">XP: 2</option>
-            <option value="Veneno" data-exp="1">XP: 1</option>
-            <option value="Exclusivo" data-exp="1">XP: 1</option>
-            <option value="Veterano" data-exp="2">XP: 2 + N</option>
-            <option value="Alvo" data-exp="1">XP: 1</option>
+            <option data-exp="1" value="Empurrão">XP: 1</option>
+            <option data-exp="2" value="Puxão">XP: 2</option>
+            <option data-exp="1" value="Pesado">XP: 1</option>
+            <option data-exp="1" value="Volta">XP: 1</option>
+            <option data-exp="2" value="Espinho">XP: 2 + N</option>
+            <option data-exp="3" value="Caça">XP: 3</option>
+            <option data-exp="2" value="Combo">XP: 2</option>
+            <option data-exp="2" value="Ajudante">XP: 2</option>
+            <option data-exp="1" value="Armadura">XP: 1 + N</option>
+            <option data-exp="0" value="Escudo">XP: 0 + N</option>
+            <option data-exp="1" value="Perfuração">XP: 1</option>
+            <option data-exp="2" value="Invasor">XP: 2</option>
+            <option data-exp="3" value="Predador">XP: 3</option>
+            <option data-exp="2" value="Comida">XP: 2</option>
+            <option data-exp="4" value="Equilíbrio">XP: 4</option>
+            <option data-exp="1" value="Copião">XP: 1</option>
+            <option data-exp="2" value="Cura">XP: 2</option>
+            <option data-exp="2" value="Vampirismo">XP: 2</option>
+            <option data-exp="1" value="Regeneração">XP: 1</option>
+            <option data-exp="1" value="Explosivo">XP: 1 + N</option>
+            <option data-exp="3" value="Ressurgir">XP: 3 + N</option>
+            <option data-exp="2" value="Fogo">XP: 2 + N</option>
+            <option data-exp="2" value="Pavor">XP: 2</option>
+            <option data-exp="1" value="Orgulhoso">XP: 1</option>
+            <option data-exp="1" value="Persistente">XP: 1</option>
+            <option data-exp="3" value="Ecstasy">XP: 3</option>
+            <option data-exp="2" value="Furioso">XP: 2</option>
+            <option data-exp="2" value="Rápido">XP: 2</option>
+            <option data-exp="0" value="Distância">XP: 0 + N</option>
+            <option data-exp="0" value="Voador">XP: 0 + N</option>
+            <option data-exp="1" value="Garras">XP: 1</option>
+            <option data-exp="2" value="Certeiro">XP: 2</option>
+            <option data-exp="1" value="Veneno">XP: 1</option>
+            <option data-exp="1" value="Exclusivo">XP: 1</option>
+            <option data-exp="2" value="Veterano">XP: 2 + N</option>
+            <option data-exp="1" value="Alvo">XP: 1</option>
 
-            <option value="Dor" data-exp="-1">XP: -1</option>
-            <option value="Paralisia" data-exp="-2">XP: -2</option>
-            <option value="Confusão" data-exp="-1">XP: -1</option>
-            <option value="Envenenado" data-exp="0">XP: 0 - N</option>
-            <option value="Vulnerável" data-exp="-1">XP: -1</option>
-            <option value="Lealdade" data-exp="-2">XP: -2</option>
-            <option value="Lento" data-exp="-1">XP: -1</option>
-            <option value="Leve" data-exp="-1">XP: -1</option>
-            <option value="Medroso" data-exp="-1">XP: -1</option>
-            <option value="Frágil" data-exp="-2">XP: -2</option>
+            <!-- Malefícios -->
+            <option data-exp="-1" value="Dor">XP: -1</option>
+            <option data-exp="-2" value="Paralisia">XP: -2</option>
+            <option data-exp="-1" value="Confusão">XP: -1</option>
+            <option data-exp="0" value="Envenenado">XP: 0 - N</option>
+            <option data-exp="-1" value="Vulnerável">XP: -1</option>
+            <option data-exp="-2" value="Lealdade">XP: -2</option>
+            <option data-exp="-1" value="Lento">XP: -1</option>
+            <option data-exp="-1" value="Leve">XP: -1</option>
+            <option data-exp="-1" value="Medroso">XP: -1</option>
+            <option data-exp="-2" value="Frágil">XP: -2</option>
         </datalist>
     </div>
     </body>
